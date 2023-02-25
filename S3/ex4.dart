@@ -1,13 +1,10 @@
-import 'dart:io';
+import 'dart:math';
 void main() {
-  List<int> valores = new List.empty(growable: true);
-  
-  for (int i = 0; i<100; i++){
-  int valor = int.parse(stdin.readLineSync()!);
-  valores.add(valor);
-}
- for (int i = 0; i < valores.length; i++){
-  print('N[$i] = ${valores[i]}');
- }
-  
+  List<int> valores = new List.generate(100, (index) => Random().nextInt(101));
+  for (int i = 0; i < valores.length; i++) {
+    if (valores[i] <= 10) {
+      print('N[$i] = ${valores[i]}');
+    }
+  }
+  print('Lista completa: $valores');
 }
